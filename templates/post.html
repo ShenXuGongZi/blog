@@ -4,9 +4,25 @@
     <article class="ui segment">
         <h1 class="ui header">{{ post.title }}</h1>
         <p class="ui sub header">发布于: {{ post.created_at.strftime('%Y-%m-%d %H:%M') }}</p>
+        {% if post.image_filename %}
+            <img src="{{ url_for('static', filename='images/' + post.image_filename) }}" alt="文章图片" class="ui medium image">
+        {% endif %}
         <div class="ui divider"></div>
         <div class="post-content">
             {{ content|safe }}
         </div>
+        {% if current_user.is_authenticated %}
+            <div class="ui divider"></div>
+            <div class="extra">
+                <a class="ui tiny primary button" href="{{ url_for('edit_post', id=post.id) }}">
+                    <i class="edit icon"></i>编辑
+                </a>
+                <form action="{{ url_for('delete_post', id=post.id) }}" method="POST" style="display: inline;">
+                    <button class="ui tiny red button" type="submit" onclick="return confirm('确定要删除这篇文章吗？');">
+                        <i class="trash icon"></i>删除
+                    </button>
+                </form>
+            </div>
+        {% endif %}
     </article>
 {% endblock %}

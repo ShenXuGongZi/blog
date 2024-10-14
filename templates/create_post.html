@@ -1,17 +1,65 @@
 {% extends "base.html" %}
 
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vditor/dist/index.css" />
+{% endblock %}
+
 {% block content %}
     <h1 class="ui header">创建新文章</h1>
-    <form class="ui form" method="post">
+    <form class="ui form" method="post" enctype="multipart/form-data" id="post-form">
         {{ form.hidden_tag() }}
         <div class="field">
             {{ form.title.label }}
-            {{ form.title() }}
+            {{ form.title(class="ui input") }}
         </div>
         <div class="field">
             {{ form.content.label }}
-            {{ form.content() }}
+            <div id="vditor"></div>
+            {{ form.content(style="display: none;") }}
         </div>
-        {{ form.submit(class="ui primary button") }}
+        <div class="field">
+            {{ form.image.label }}
+            {{ form.image(id="image-upload") }}
+        </div>
+        {{ form.submit(class="ui primary button", onclick="submitForm()") }}
     </form>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <script src="https://cdn.jsdelivr.net/npm/vditor/dist/index.min.js"></script>
+    <script>
+        let vditor;
+        document.addEventListener('DOMContentLoaded', () => {
+            vditor = new Vditor('vditor', {
+                height: 360,
+                toolbarConfig: {
+                    pin: true,
+                },
+                cache: {
+                    enable: false,
+                },
+                after: () => {
+                    vditor.setValue("{{ form.content.data or '' }}");
+                },
+                upload: {
+                    url: '/upload_image',
+                    fieldName: 'image',
+                    success: (editor, msg) => {
+                        const res = JSON.parse(msg);
+                        if (res.success) {
+                            editor.insertValue(`![${res.filename}](${res.url})`);
+                        } else {
+                            alert('图片上传失败');
+                        }
+                    },
+                },
+            });
+        });
+
+        function submitForm() {
+            document.getElementById('content').value = vditor.getValue();
+        }
+    </script>
 {% endblock %}

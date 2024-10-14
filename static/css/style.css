@@ -479,3 +479,12 @@ code {
 footer .copyright {
     color: #888888;  /* 这是一个中等灰色，您可以根据需要调整 */
 }
+
+.ui.tiny.red.button {
+    background-color: #db2828;
+    color: #ffffff;
+}
+
+.ui.tiny.red.button:hover {
+    background-color: #d01919;
+}

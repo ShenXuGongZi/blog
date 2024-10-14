@@ -13,8 +13,8 @@
 
 1. 克隆仓库：
    ```
-   git clone https://github.com/ShenXuGongZi/blog.git
-   cd blog
+   git clone https://github.com/你的用户名/你的仓库名.git
+   cd 你的仓库名
    ```
 
 2. 创建并激活虚拟环境：
