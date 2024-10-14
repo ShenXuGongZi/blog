@@ -1,0 +1,404 @@
+body {
+    font-family: 'Roboto', 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: #2e2f3e;
+    color: #fffffe;
+    padding: 1rem 0;
+    box-shadow: 0 2px 8px rgba(0,255,255,0.2);
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #00fff5;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff8906;
+}
+
+main {
+    padding: 2rem 0;
+}
+
+h1, h2 {
+    color: #1a5f7a;  /* 使用之前定义的学术风格的颜色 */
+}
+
+article {
+    background-color: #2e2f3e;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,255,255,0.1);
+    border: 1px solid #00fff5;
+}
+
+form div {
+    margin-bottom: 1rem;
+}
+
+input[type="text"], input[type="password"], textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #00fff5;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #2e2f3e;
+    color: #fffffe;
+}
+
+input[type="submit"] {
+    background-color: #ff8906;
+    color: #0f0e17;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #f25f4c;
+}
+
+.flash {
+    background-color: #2e2f3e;
+    border: 1px solid #00fff5;
+    color: #00fff5;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #2e2f3e;
+    color: #fffffe;
+}
+
+.post-content {
+    line-height: 1.8;
+}
+
+.post-meta {
+    color: #a7a9be;
+    font-size: 0.9em;
+}
+
+/* 添加一些加密货币风格的元素 */
+.crypto-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #0f0e17 25%, #2e2f3e 25%, #2e2f3e 50%, #0f0e17 50%, #0f0e17 75%, #2e2f3e 75%, #2e2f3e 100%);
+    background-size: 40px 40px;
+    opacity: 0.05;
+    z-index: -1;
+}
+
+.ui.inverted.segment {
+    background: linear-gradient(45deg, #2185D0, #21BA45);
+}
+
+.ui.inverted.secondary.menu .item {
+    color: #FFFFFF !important;
+}
+
+.ui.inverted.secondary.menu .item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.ui.card {
+    background-color: #2C2C2C;
+    box-shadow: 0 1px 3px 0 #00FFFF, 0 0 0 1px #00FFFF;
+}
+
+.ui.card > .content > .header {
+    color: #00FFFF;
+}
+
+.ui.card > .content > .description {
+    color: #FFFFFF;
+}
+
+.ui.form input[type="text"],
+.ui.form input[type="password"],
+.ui.form textarea {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    color: #333;
+}
+
+/* 为了保持一致性，我们也可以修改输入框获得焦点时的样式 */
+.ui.form input[type="text"]:focus,
+.ui.form input[type="password"]:focus,
+.ui.form textarea:focus {
+    border-color: #1a5f7a;
+    background-color: #ffffff;
+}
+
+.ui.button {
+    background-color: #2185D0;
+    color: #FFFFFF;
+}
+
+.ui.button:hover {
+    background-color: #1678C2;
+}
+
+.crypto-icon {
+    font-size: 2em;
+    margin-right: 10px;
+}
+
+.ui.container {
+    margin-top: 2rem;
+}
+
+.ui.menu {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-bottom: 3px solid #1a5f7a;
+}
+
+.ui.menu .item {
+    color: #1a5f7a;
+    font-weight: 500;
+}
+
+.ui.menu .item:hover {
+    background-color: #e6f3f8;
+}
+
+.ui.header {
+    color: #1a5f7a;
+    text-shadow: none;  /* 确保没有文字阴影 */
+}
+
+h1.ui.header {
+    font-size: 2.2em;
+    margin-bottom: 1em;
+    border-bottom: 2px solid #1a5f7a;
+    padding-bottom: 0.5em;
+}
+
+.ui.segment {
+    border: none;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    background-color: #ffffff;
+}
+
+.ui.form input[type="text"],
+.ui.form input[type="password"],
+.ui.form textarea {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    color: #333;
+}
+
+.ui.form input[type="text"]:focus,
+.ui.form input[type="password"]:focus,
+.ui.form textarea:focus {
+    border-color: #1a5f7a;
+    background-color: #ffffff;
+}
+
+.ui.button.primary {
+    background-color: #1a5f7a;
+}
+
+.ui.button.primary:hover {
+    background-color: #14475a;
+}
+
+.ui.message {
+    box-shadow: none;
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+.ui.items > .item {
+    background-color: #fff;
+    padding: 1.5em;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-bottom: 1.5em;
+    border-left: 4px solid #1a5f7a;
+}
+
+.ui.items > .item > .content > .header {
+    color: #1a5f7a;
+    font-size: 1.4em;
+    margin-bottom: 0.8em;
+}
+
+.ui.items > .item > .content > .description {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1em;
+}
+
+.ui.items > .item > .content > .meta {
+    color: #888;
+    font-size: 0.9em;
+    margin-bottom: 0.8em;
+}
+
+footer.ui.segment {
+    margin-top: 2rem;
+    background-color: #1a5f7a;
+    color: #ffffff;
+    border-top: none;
+}
+
+.ui.relaxed.divided.items {
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    padding: 1em;
+}
+
+.ui.relaxed.divided.items > .item {
+    padding: 1.5em 1em;
+    margin: 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.ui.relaxed.divided.items > .item:last-child {
+    border-bottom: none;
+}
+
+.post-content {
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+blockquote {
+    border-left: 4px solid #1a5f7a;
+    padding-left: 1em;
+    color: #555;
+    font-style: italic;
+    margin: 1em 0;
+}
+
+code {
+    background-color: #f5f5f5;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.ui.form label {
+    color: #1a5f7a;
+    font-weight: 600;
+}
+
+/* 在文件末尾添加以下样式 */
+
+.ui.menu .item h2.ui.header {
+    margin: 0;
+}
+
+.ui.menu .item h2.ui.header .content {
+    font-size: 1.2em;
+    color: #1a5f7a;
+}
+
+.ui.menu .item h2.ui.header .sub.header {
+    font-size: 0.7em;
+    color: #555;
+}
+
+.ui.menu .item h2.ui.header i.icon {
+    font-size: 1.5em;
+    color: #1a5f7a;
+}
+
+.ui.menu .item.logo {
+    padding: 0;
+}
+
+.ui.menu .item.logo:hover {
+    background: none;
+}
+
+.ui.menu .item.logo h2.ui.header {
+    margin: 0;
+    padding: 0.92857143em 1.14285714em;
+}
+
+.ui.menu .item.logo h2.ui.header:hover {
+    background-color: #e6f3f8;
+}
+
+.ui.menu .item.logo h2.ui.header .content,
+.ui.menu .item.logo h2.ui.header .content:hover {
+    color: #1a5f7a;
+}
+
+/* 在文件末尾添加或修改以下样式 */
+
+.ui.relaxed.divided.items > .item {
+    padding: 1.5em 1em;
+    margin: 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.ui.relaxed.divided.items > .item > .content {
+    padding: 15px;  /* 添加这一行 */
+}
+
+.ui.relaxed.divided.items > .item:last-child {
+    border-bottom: none;
+}
+
+.ui.items > .item > .content > .header {
+    margin-bottom: 0.5em;  /* 可以根据需要调整 */
+}
+
+.ui.items > .item > .content > .meta {
+    margin-bottom: 0.8em;  /* 可以根据需要调整 */
+}
+
+.ui.items > .item > .content > .description {
+    margin-bottom: 1em;  /* 可以根据需要调整 */
+}
+
+.ui.items > .item > .content > .extra {
+    margin-top: 1em;  /* 可以根据需要调整 */
+}
+
+footer .copyright {
+    color: #888888;  /* 这是一个中等灰色，您可以根据需要调整 */
+}

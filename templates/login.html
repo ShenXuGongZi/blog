@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="ui header">登录</h1>
+    <form class="ui form" method="post">
+        {{ form.hidden_tag() }}
+        <div class="field">
+            {{ form.username.label }}
+            {{ form.username(size=32) }}
+        </div>
+        <div class="field">
+            {{ form.password.label }}
+            {{ form.password(size=32) }}
+        </div>
+        <div class="field">
+            {{ form.remember_me() }} {{ form.remember_me.label }}
+        </div>
+        {{ form.submit(class="ui primary button") }}
+    </form>
+{% endblock %}
