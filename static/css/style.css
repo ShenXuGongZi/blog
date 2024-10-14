@@ -214,9 +214,40 @@ h1.ui.header {
 }
 
 .ui.segment {
-    border: none;
+    margin-bottom: 1em;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    background-color: #ffffff;
+}
+
+.ui.segment h2.ui.header {
+    margin-bottom: 0.5em;
+}
+
+.ui.segment .meta {
+    margin-bottom: 1em;
+    color: #888;
+}
+
+.ui.segment .description {
+    margin-bottom: 1em;
+}
+
+.ui.segment .extra {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.ui.segment .extra .button {
+    margin-left: 0.5em;
+}
+
+.ui.tiny.button {
+    font-size: 0.85rem;
+}
+
+.ui.right.floated.button {
+    float: none;
 }
 
 .ui.form input[type="text"],
@@ -282,21 +313,67 @@ footer.ui.segment {
     border-top: none;
 }
 
+/* 移除或注释掉这些样式 */
+/*
 .ui.relaxed.divided.items {
     background-color: #ffffff;
     border-radius: 4px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    padding: 1em;
+    padding: 0.75em 0;
 }
 
 .ui.relaxed.divided.items > .item {
-    padding: 1.5em 1em;
+    padding: 1em;
     margin: 0;
-    border-bottom: 1px solid #f0f0f0;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.ui.relaxed.divided.items > .item:last-child {
-    border-bottom: none;
+.ui.relaxed.divided.items > .item:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.ui.relaxed.divided.items > .item > .content {
+    padding: 15px;
+}
+*/
+
+/* 添加新的样式来美化 segment */
+.ui.segment {
+    margin-bottom: 1em;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.ui.segment h2.ui.header {
+    margin-bottom: 0.5em;
+}
+
+.ui.segment .meta {
+    margin-bottom: 1em;
+    color: #888;
+}
+
+.ui.segment .description {
+    margin-bottom: 1em;
+}
+
+.ui.segment .extra {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.ui.segment .extra .button {
+    margin-left: 0.5em;
+}
+
+.ui.tiny.button {
+    font-size: 0.85rem;
+}
+
+.ui.right.floated.button {
+    float: none;
 }
 
 .post-content {
